@@ -8,6 +8,7 @@ on an external json file and imported/edited on each execution.
 
 import os
 import json
+import shutil
 import common.params
 
 class Database:
@@ -51,6 +52,18 @@ class Database:
     self.params = {}
     with open(params_file) as json_file:
       self.params = json.load(json_file)
+
+    # look for any image files - if found, store on arts path
+    self.art = None
+    for source_file in os.listdir(common.params._PATH_STAGING):
+      if source_file.endswith(".png"):
+        target_file = os.path.join(common.params._PATH_ARTS, "art.png")
+        shutil.move(os.path.join(common.params._PATH_STAGING, source_file), target_file)
+        self.art = target_file
+        break
+
+    # TODO: debug only - hard coded art
+    self.art = os.path.join(common.params._PATH_ARTS, "art.png")
 
   def __del__(self):
     """Database Class Destructor

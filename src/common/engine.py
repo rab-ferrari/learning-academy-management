@@ -126,7 +126,7 @@ def module_work(module, flow, config, flow_handler, database, main_logger):
 
   except Exception:
     main_logger.error(common.params._MODULE_MESSAGE_ERROR.format(module))
-    logger.error     (common.params._MODULE_MESSAGE_ERROR.format(module))
+    logger.error     (common.params._MODULE_MESSAGE_ERROR.format(module), exc_info=True)
     main_logger.warning(f"Interruped execution - flow {flow} - caused by module {module}")
     flow_handler.stop_flow_failure(flow)
     return

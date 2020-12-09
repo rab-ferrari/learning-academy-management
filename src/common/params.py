@@ -18,6 +18,8 @@ _LOG_MAIN         = None
 
 # assets paths
 _PATH_ASSETS      = None
+_PATH_STAGING     = None
+_PATH_ARTS        = None
 _PATH_CONFIG      = None
 _PATH_MODULES     = None
 _PATH_FLOWS       = None
@@ -51,13 +53,15 @@ def initialize(main_file, secrets_file=None):
   _LOG_MAIN         = os.path.join(_LOG_PATH, "main.log"    )
 
   global _PATH_ASSETS, _PATH_CONFIG, _PATH_MODULES, _PATH_FLOWS, _PATH_SECRETS
-  global _PATH_PARAMS, _PATH_DATABASE
+  global _PATH_PARAMS, _PATH_DATABASE, _PATH_ARTS, _PATH_STAGING
   _PATH_ASSETS      = os.path.join(current_path, "assets"       )
+  _PATH_STAGING     = os.path.join(current_path, "staging"      )
+  _PATH_ARTS        = os.path.join(_PATH_ASSETS, "arts"         )
   _PATH_CONFIG      = os.path.join(_PATH_ASSETS, "config.ini"   )
   _PATH_MODULES     = os.path.join(_PATH_ASSETS, "modules.json" )
   _PATH_FLOWS       = os.path.join(_PATH_ASSETS, "flows.json"   )
-  _PATH_PARAMS      = os.path.join(_PATH_ASSETS, "params.json"  )
   _PATH_DATABASE    = os.path.join(_PATH_ASSETS, "database.json")
+  _PATH_PARAMS      = os.path.join(_PATH_STAGING, "input.json"  )
 
   if secrets_file is None:
     secrets_file = os.path.join(_PATH_ASSETS, "secrets.ini")
