@@ -154,3 +154,8 @@ dmypy.json
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python
+#
+# Custom gitignore properties
+src/assets/database.json
+src/assets/secrets.ini
+src/o365_token.txt
