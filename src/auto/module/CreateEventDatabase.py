@@ -19,6 +19,7 @@ def perform(flow, config, database, logger, **kwargs):
   for datetime in database.params["datetimes"]:
     meetings.append({
       "datetime": datetime,
+      "email_scheduled": False,
       "happened": False,
       "zoom_location": None,
       "presence_list": []

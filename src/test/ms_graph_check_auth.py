@@ -8,7 +8,8 @@ scopes = [
   'https://graph.microsoft.com/User.Read'
 ]  # you can use scope helpers here (see Permissions and Scopes section)
 
-account = Account(('client_id', 'secret'))
+credentials = ('client_id', 'secret')
+account = Account(credentials)
 
 if not account.is_authenticated:  # will check if there is a token and has not expired
     # ask for a login

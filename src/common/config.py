@@ -110,3 +110,14 @@ class Config:
       (str): Secret value
     """
     return self.secrets[secret]
+
+  def get_email(self, mail):
+    """Get Email Address
+
+    Args:
+      secret (str): Email name/position
+
+    Returns:
+      (str): Email value
+    """
+    return self.info["mail"][mail]

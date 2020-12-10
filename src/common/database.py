@@ -72,3 +72,11 @@ class Database:
     """
     with open(self.data_file, "w") as json_file:
       json.dump(self.data, json_file, indent=2)
+
+  def get_event_input(self):
+    """Get Event Input
+
+    Returns:
+      (str): Event passed as input parameter
+    """
+    return self.params["event"]
