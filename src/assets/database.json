@@ -2,6 +2,9 @@
   "events": {
     "meu novo evento": {
       "name": "meu novo evento",
+      "description": "uma descricao bem legal.",
+      "sympla_id": 1080274,
+      "ticket": "default",
       "art": "assets\\arts\\meu novo evento.png",
       "meetings": [
         {
@@ -18,7 +21,23 @@
         }
       ],
       "email_conversation_id": null,
-      "participants": []
+      "participants": [
+        {
+          "first_name": "Almeida",
+          "last_name": "Bergamo",
+          "email": "rodrigo.ferrari@fit-tecnologia.org.br"
+        },
+        {
+          "first_name": "Gmail",
+          "last_name": "Ferrari",
+          "email": "rodrigobergamo10@gmail.com"
+        },
+        {
+          "first_name": "nicholas",
+          "last_name": "fujimoto",
+          "email": "celldeusuicide@hotmail.com"
+        }
+      ]
     }
   }
 }

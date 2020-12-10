@@ -1,5 +1,6 @@
 {
   "event": "meu novo evento",
+  "description": "uma descricao bem legal.",
   "datetimes": [
     "2020-12-12 15:00:00",
     "2020-12-13 16:00:00"

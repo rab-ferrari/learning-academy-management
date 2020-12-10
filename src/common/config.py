@@ -94,5 +94,19 @@ class Config:
     Args:
       env (str): Environment option
     """
-    self.env  = env
-    self.info = self.global_info[env]
+    self.env      = env
+    self.info     = self.global_info[env]
+    self.secrets  = self.secrets[env]
+
+  def get_secret(self, secret):
+    """Get Secret
+
+    Retrieves a secret of a given service.
+
+    Args:
+      secret (str): Secret name
+
+    Returns:
+      (str): Secret value
+    """
+    return self.secrets[secret]

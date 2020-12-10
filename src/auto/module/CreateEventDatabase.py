@@ -3,13 +3,13 @@
 
 Name: CreateEventDatabase
 
-Creates an event entry on the database. It does:
-  - store the event data in the database
-  - copy
+Compiles data into database format, adds some additional fields that will
+be filled by other modules and stores everything in the database.
 """
 import os
-import shutil
-import common.params
+from common.params import (
+  _PATH_ARTS
+)
 
 
 def perform(flow, config, database, logger, **kwargs):
@@ -26,12 +26,14 @@ def perform(flow, config, database, logger, **kwargs):
 
   # rename and retrieve art path
   name = database.params["event"]
-  art  = os.path.join(common.params._PATH_ARTS, f"{name}.png")
+  art  = os.path.join(_PATH_ARTS, f"{name}.png")
   os.rename(database.art, art)
 
   # compile complete event data struct
   event = {
     "name"     : name,
+    "description": database.params["description"],
+    "sympla_id": None,
     "art"      : art,
     "meetings" : meetings,
     "email_conversation_id": None,
