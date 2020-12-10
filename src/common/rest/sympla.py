@@ -2,6 +2,7 @@
 """Sympla Rest API Handling
 
 Declares class for standard Sympla requests to be shared among modules.
+Documentation available at https://developers.sympla.com.br/api-doc/index.html
 """
 from common.rest import (
   Rest
