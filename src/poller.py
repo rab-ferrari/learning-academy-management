@@ -70,7 +70,7 @@ for message in inbox.get_messages(limit=100, query=query):
     json.dump(json_data, json_file)
 
   # compile the command to be executed - also expected in the "json email data"
-  output_command = f"call python app.py {config.env} -flow {json_data['flow']}"
+  output_command = f"call run\\src\\python app.py {config.env} -flow {json_data['flow']}"
 
   # write command to bat file
   logger.info(f"Output command compiled, will run afterwards: \n\t{output_command}")
