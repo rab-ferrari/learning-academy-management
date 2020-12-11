@@ -54,10 +54,15 @@ for message in inbox.get_messages(limit=100, query=query):
   logger.info(f"Message {message} found! Start processing...")
 
   # store the email body data as a json file (for now it HAS to be correct)
-  body = html2text.html2text(message.body)
-  json_data = json.loads(body)
+  try:
+    body = html2text.html2text(message.body)
+    json_data = json.loads(body)
+  except Exception:
+    logger.error("Input not recognized - must be a json formatted email!")
+    exit(0)
 
   # store the sender email as a parameter
+  logger.info("Input recognized, will compile output command")
   json_data["recipient"] = message.sender.address
 
   # dump the json file into the staging/input file
@@ -68,12 +73,13 @@ for message in inbox.get_messages(limit=100, query=query):
   output_command = f"call python app.py {config.env} -flow {json_data['flow']}"
 
   # write command to bat file
+  logger.info(f"Output command compiled, will run afterwards: \n\t{output_command}")
   with open(bat_file, "w") as f:
     f.write(output_command)
 
   # move message to archived folder and end execution
   # message.move(mailbox.archive_folder())
-  return
+  exit(0)
 
 # if the execution gets here, no files were found
 logger.info("No new emails...")
