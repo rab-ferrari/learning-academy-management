@@ -12,7 +12,7 @@ Example:
 
 import logging
 
-_LOG_LEVEL  = logging.DEBUG
+_LOG_LEVEL  = logging.INFO
 
 
 def create(local_log, console=False):

@@ -155,6 +155,7 @@ dmypy.json
 
 ### custom project ignores ###
 **/persistent/*
+**/staging/*
 o365_token.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python

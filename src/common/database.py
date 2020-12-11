@@ -62,9 +62,11 @@ class Database:
       self.data = json.load(json_file)
 
     # import params
-    self.params = {}
-    with open(params_file) as json_file:
-      self.params = json.load(json_file)
+    try:
+      with open(params_file) as json_file:
+        self.params = json.load(json_file)
+    except FileNotFoundError:
+      self.params = {"event": None}
 
     # look for any image files - if found, store on arts path
     self.art = None

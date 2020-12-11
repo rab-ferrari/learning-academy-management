@@ -9,6 +9,8 @@ be filled by other modules and stores everything in the database.
 TODO:
   We are able to set an `is_online_meeting` flag in the microsoft calendar,
   so it might be useful to input and store this parameter as well.
+
+TODO: check if name already exists ; add url to required inputs ; use url as search key
 """
 import os
 from common.params import (
