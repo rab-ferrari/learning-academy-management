@@ -51,6 +51,7 @@ query = inbox.new_query().on_attribute("subject").contains(config.secrets["jenki
 
 # run the command for the first message it finds and end the program afterwards
 for message in inbox.get_messages(limit=100, query=query):
+  logger.info(f"Message {message} found! Start processing...")
 
   # store the email body data as a json file (for now it HAS to be correct)
   body = html2text.html2text(message.body)
@@ -70,5 +71,9 @@ for message in inbox.get_messages(limit=100, query=query):
   with open(bat_file, "w") as f:
     f.write(output_command)
 
-  # move message to archived folder
+  # move message to archived folder and end execution
   # message.move(mailbox.archive_folder())
+  return
+
+# if the execution gets here, no files were found
+logger.info("No new emails...")
