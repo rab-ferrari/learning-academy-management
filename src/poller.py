@@ -79,7 +79,7 @@ for message in inbox.get_messages(limit=100, query=query):
     f.write(output_command)
 
   # move message to archived folder and end execution
-  # message.move(mailbox.archive_folder())
+  message.move(mailbox.archive_folder())
   exit(0)
 
 # if the execution gets here, no files were found
