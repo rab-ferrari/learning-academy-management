@@ -23,7 +23,7 @@ def initialize_account(config, logger):
   Returns:
     (:obj:`O365.Account`): MS Graph modularized account
   """
-  credentials = (config.secrets["msgraph.cliend_id"], config.secrets["msgraph.secret"])
+  credentials = (config.secrets["msgraph.client_id"], config.secrets["msgraph.secret"])
   account = Account(credentials)
   account.connection.refresh_token()
 

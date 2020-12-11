@@ -28,6 +28,7 @@ _PATH_MODULES     = None
 _PATH_FLOWS       = None
 _PATH_SECRETS     = None
 _PATH_PARAMS      = None
+_PATH_PERSISTENT  = None
 _PATH_DATABASE    = None
 
 # module execution messages
@@ -69,16 +70,17 @@ def initialize(main_file, secrets_file=None):
   _LOG_MAIN         = os.path.join(_LOG_PATH, "main.log"    )
 
   global _PATH_ASSETS, _PATH_CONFIG, _PATH_MODULES, _PATH_FLOWS, _PATH_SECRETS
-  global _PATH_PARAMS, _PATH_DATABASE, _PATH_ARTS, _PATH_STAGING
+  global _PATH_PARAMS, _PATH_DATABASE, _PATH_ARTS, _PATH_STAGING, _PATH_PERSISTENT
+  _PATH_PERSISTENT  = os.path.join(current_path, "persistent"   )
   _PATH_ASSETS      = os.path.join(current_path, "assets"       )
   _PATH_STAGING     = os.path.join(current_path, "staging"      )
-  _PATH_ARTS        = os.path.join(_PATH_ASSETS, "arts"         )
-  _PATH_CONFIG      = os.path.join(_PATH_ASSETS, "config.ini"   )
+  _PATH_ARTS        = os.path.join(_PATH_PERSISTENT, "arts"         )
+  _PATH_CONFIG      = os.path.join(_PATH_PERSISTENT, "config.ini"   )
+  _PATH_DATABASE    = os.path.join(_PATH_PERSISTENT, "database.json")
   _PATH_MODULES     = os.path.join(_PATH_ASSETS, "modules.json" )
   _PATH_FLOWS       = os.path.join(_PATH_ASSETS, "flows.json"   )
-  _PATH_DATABASE    = os.path.join(_PATH_ASSETS, "database.json")
   _PATH_PARAMS      = os.path.join(_PATH_STAGING, "input.json"  )
 
   if secrets_file is None:
-    secrets_file = os.path.join(_PATH_ASSETS, "secrets.ini")
+    secrets_file = os.path.join(_PATH_PERSISTENT, "secrets.ini")
   _PATH_SECRETS     = secrets_file
