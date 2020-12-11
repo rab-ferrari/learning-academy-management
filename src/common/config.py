@@ -6,6 +6,7 @@ containing all relevant configuration dependent information and implements
 methods to access this information.
 """
 import os
+import pytz
 import configparser
 import common.params
 
@@ -121,3 +122,36 @@ class Config:
       (str): Email value
     """
     return self.info["mail"][mail]
+
+  def get_timezone(self, timezone):
+    """Get Timezone
+
+    Args:
+      timezone (str): Timezone name
+
+    Returns:
+      (pytz.timezone): Timezone value
+    """
+    return pytz.timezone(self.info["timezone"][timezone])
+
+  def get_event_info(self, info):
+    """Get Event Info
+
+    Args:
+      info (str): Info identifier
+
+    Returns:
+      (obj): Info value
+    """
+    return self.info["event"][info]
+
+  def get_alert_info(self, info):
+    """Get Alert Info
+
+    Args:
+      info (str): Info identifier
+
+    Returns:
+      (obj): Info value
+    """
+    return self.info["alert"][info]

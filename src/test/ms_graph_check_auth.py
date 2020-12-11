@@ -1,6 +1,7 @@
 from O365 import Account
 
 scopes = [
+  'https://graph.microsoft.com/Calendars.ReadWrite',
   'https://graph.microsoft.com/email',
   'https://graph.microsoft.com/Mail.ReadWrite',
   'https://graph.microsoft.com/Mail.Send',

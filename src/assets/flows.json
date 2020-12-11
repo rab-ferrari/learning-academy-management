@@ -1,13 +1,31 @@
 {
-  "flow_d": [
-    "a",
-    "b"
+  "CreateEvent": [
+    "CreateDatabaseEvent"
   ],
-  "flow_e": [
-    "b"
+  "MonitorEventStatus": [
+    "UpdateDatabaseEvents",
+    "UpdateEmailEvents",
+    "AlertEventStatus",
+    "SendEmailData",
+    "AlertEventStatusCritical",
+    "SendEmailData",
+    "AlertEmailAd",
+    "SendEmailData"
   ],
-  "flow_f": [
-    "c",
-    "a"
+  "RequestEventStatus": [
+    "UpdateDatabaseEvents",
+    "UpdateEmailEvents",
+    "GetEmailEventStatus",
+    "SendEmailData"
+  ],
+  "RequestEventAd": [
+    "UpdateDatabaseEvents",
+    "UpdateEmailEvents",
+    "GetEmailAd",
+    "SendEmailData"
+  ],
+  "ScheduleEvent": [
+    "GetEventParticipants",
+    "CreateEmailEvent"
   ]
 }

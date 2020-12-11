@@ -4,19 +4,28 @@
       "name": "meu novo evento",
       "description": "uma descricao bem legal.",
       "sympla_id": 1080274,
+      "sympla_url": "https://www.sympla.com.br/meu-novo-evento__1080274",
+      "capacity": 5,
       "ticket": "default",
       "art": "assets\\arts\\meu novo evento.png",
+      "teachers": [
+        {
+          "first_name": "Mario",
+          "last_name": "Bonifacio",
+          "email": "rodrigo.ferrari@fit-tecnologia.org.br"
+        }
+      ],
       "meetings": [
         {
           "datetime": "2020-12-12 15:00:00",
-          "email_scheduled": false,
+          "email_scheduled": true,
           "happened": false,
           "zoom_location": null,
           "presence_list": []
         },
         {
           "datetime": "2020-12-13 16:00:00",
-          "email_scheduled": false,
+          "email_scheduled": true,
           "happened": false,
           "zoom_location": null,
           "presence_list": []
@@ -27,12 +36,14 @@
         {
           "first_name": "Gmail",
           "last_name": "Ferrari",
-          "email": "ralpho.scolari@fit-tecnologia.org.br"
+          "email": "rodrigobergamo10@gmail.com",
+          "status": "pending"
         },
         {
-          "first_name": "nicholas",
-          "last_name": "fujimoto",
-          "email": "rodrigo.ferrari@fit-tecnologia.org.br"
+          "first_name": "Ralpho",
+          "last_name": "Scolari",
+          "email": "ralpho.scolari@fit-tecnologia.org.br",
+          "status": "confirmed"
         }
       ]
     }

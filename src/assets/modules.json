@@ -1,8 +1,13 @@
 [
-  "a",
-  "b",
-  "c",
-  "CreateEventDatabase",
+  "AlertEmailAd",
+  "AlertEventStatus",
+  "AlertEventStatusCritical",
+  "CreateDatabaseEvent",
+  "CreateEmailEvent",
+  "GetEmailAd",
+  "GetEmailEventStatus",
   "GetEventParticipants",
-  "CreateEmailMeetings"
+  "SendEmailData",
+  "UpdateDatabaseEvents",
+  "UpdateEmailEvents"
 ]

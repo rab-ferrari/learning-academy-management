@@ -4,6 +4,9 @@
 Declares global parameters that are referenced by several different modules.
 """
 import os
+from O365.calendar import (
+  EventResponse
+)
 
 # global aliases
 _VERSION          = "0.1 - hackaton poc"
@@ -35,6 +38,19 @@ _FLOW_TRANSITION_MESSAGE  = "\tFlow transition : {}.{} done!"
 _FLOW_MESSAGE_START       = "Flow started  : {}"
 _FLOW_MESSAGE_SUCCESS     = "Flow finished : {} successful!"
 _FLOW_MESSAGE_ERROR       = "Flow finished : {} with errors!"
+
+# confirmation status
+_RESPONSE_STATUS_DECLINED  = "declined"
+_RESPONSE_STATUS_PENDING   = "pending"
+_RESPONSE_STATUS_TENTATIVE = "tentative"
+_RESPONSE_STATUS_CONFIRMED = "confirmed"
+_RESPONSE_STATUS = {
+  EventResponse.Declined            : _RESPONSE_STATUS_DECLINED,
+  EventResponse.NotResponded        : _RESPONSE_STATUS_PENDING,
+  EventResponse.TentativelyAccepted : _RESPONSE_STATUS_TENTATIVE,
+  EventResponse.Accepted            : _RESPONSE_STATUS_CONFIRMED,
+  EventResponse.Organizer           : _RESPONSE_STATUS_CONFIRMED
+}
 
 
 def initialize(main_file, secrets_file=None):

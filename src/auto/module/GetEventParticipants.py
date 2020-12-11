@@ -10,6 +10,10 @@ in the database.
 from common.rest.sympla import (
   Sympla
 )
+from common.params import (
+  _RESPONSE_STATUS_PENDING
+)
+
 
 def perform(flow, config, database, logger, **kwargs):
 
@@ -22,17 +26,19 @@ def perform(flow, config, database, logger, **kwargs):
   event_id   = event_data["id"]
 
   # update database event_id
-  database.data["events"][event_name]["sympla_id"] = event_id
+  database.data["events"][event_name]["sympla_id"]  = event_data["id"]
+  database.data["events"][event_name]["sympla_url"] = event_data["url"]
 
   # get (relevant) event participants data
-  participants  = sympla.get_participants(event_id)
-  participants  = [{
+  sympla_participants = sympla.get_participants(event_data["id"])
+  sympla_participants    = [{
       "first_name": participant["first_name"],
       "last_name" : participant["last_name"],
-      "email"     : participant["email"]
+      "email"     : participant["email"],
+      "status"    : _RESPONSE_STATUS_PENDING
     }
-    for participant in participants
+    for participant in sympla_participants
   ]
 
-  # store participants data back into database
-  database.data["events"][event_name]["participants"] = participants
+  # overwrite sympla participants back into database
+  database.data["events"][event_name]["participants"] = sympla_participants

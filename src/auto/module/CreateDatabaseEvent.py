@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 """Module Import
 
-Name: CreateEventDatabase
+Name: CreateDatabaseEvent
 
 Compiles data into database format, adds some additional fields that will
 be filled by other modules and stores everything in the database.
+
+TODO:
+  We are able to set an `is_online_meeting` flag in the microsoft calendar,
+  so it might be useful to input and store this parameter as well.
 """
 import os
 from common.params import (
@@ -35,7 +39,10 @@ def perform(flow, config, database, logger, **kwargs):
     "name"     : name,
     "description": database.params["description"],
     "sympla_id": None,
+    "sympla_url": None,
+    "capacity" : 5,
     "art"      : art,
+    "teachers" : database.params["teachers"],
     "meetings" : meetings,
     "email_conversation_id": None,
     "participants": []
