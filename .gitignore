@@ -154,9 +154,7 @@ dmypy.json
 .ionide
 
 ### custom project ignores ###
-database.json
-/src/assets/secrets.ini
-/src/assets/database.json
+**/persistent/*
 o365_token.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python
