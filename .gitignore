@@ -155,7 +155,8 @@ dmypy.json
 
 ### custom project ignores ###
 database.json
-secrets.ini
+/src/assets/secrets.ini
+/src/assets/database.json
 o365_token.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python
