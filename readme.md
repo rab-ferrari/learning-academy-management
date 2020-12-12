@@ -1,15 +1,15 @@
 # FIT Tech Learning Academy - Course Management Interface
 This application aims to automate several manual operations performed by FIT staff regarding the management and preparation of Tech Academy courses. It runs entirely on Python 3+ and makes use of several 3rd party APIs to perform operations on external services.
 
-# TODO: review
 # Requirements
 - Windows or Windows Server operating system
 - Python 3+
 - Python packages defined in the requirements.txt file
 
-# TODO: review
 # External APIs
-- None
+- MS Graph - O365 modularization package https://github.com/O365/python-o365
+- account configurations on the Microsoft Azure portal https://portal.azure.com/
+- Sympla https://developers.sympla.com.br/api-doc/index.html
 
 # Maintenance and Development
 Some tips to facilitate the application maintenance and development:
